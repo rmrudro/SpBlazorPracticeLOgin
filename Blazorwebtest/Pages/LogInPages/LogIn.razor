@@ -1,0 +1,98 @@
+﻿@layout LoginLayout
+
+@page  "/"
+@using Blazorwebtest.Data
+<div class="whole-page">
+<div class="row col-12 header">
+
+</div>
+
+<div class="row">
+    <div class="col-8 offset-2" style="background-color:azure">
+    <EditForm Model="@user" OnValidSubmit="@ValidateUser">
+    <div>
+        
+    </div>
+   
+    <div class="col-3 offset-5">
+        <h3 style="font-weight:bold; color:purple">Book Stores Login</h3>
+    </div>
+    <div>
+        
+    </div>
+    <div class="col-4 offset-3  row">
+        <label class="col-4">ID</label>
+        <input class=" col-8" @bind="user.EmailAddress" placeholder="email address" />
+    </div>
+    <br />
+    <div class="col-4 offset-3   row">
+        <label class="col-4">パスワード</label>
+        <input type="password" class="col-8" @bind="user.Password" placeholder="password" />
+    </div>
+    <br />
+    <div class="col-4 offset-3  row">
+        
+        <input type="submit" class="col-3  btn btn-primary" value="ログイン" />
+        <input type="submit" class="col-3 offset-6 btn btn-primary" value="different" />
+       @* <a href="/signup" class="col-3">Sign up</a>*@
+    </div>
+    <br />
+    <div class="col-12 row" style="text-align:left; font-weight:bold">
+        <span class="col-12">@LoginMesssage</span>
+    </div>
+</EditForm>
+</div>
+<div class="col-2">
+
+</div>
+</div>
+
+
+</div>
+@code {
+
+    private User user;
+    public string LoginMesssage { get; set; }
+    //ClaimsPrincipal claimsPrincipal;
+
+    //[CascadingParameter]
+    //private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        user = new User();
+
+        //claimsPrincipal = (await authenticationStateTask).User;
+
+        //if (claimsPrincipal.Identity.IsAuthenticated)
+        //{
+        //    NavigationManager.NavigateTo("/index");
+        //}
+        //{
+        //    user.EmailAddress = "philip.cramer@gmail.com";
+        //    user.Password = "philip.cramer";
+        //}
+
+    }
+
+    private async Task<bool> ValidateUser()
+    {
+        //assume that user is valid
+        //call an API
+
+        //var returnedUser = await userService.LoginAsync(user);
+
+        //if (returnedUser.EmailAddress != null)
+        //{
+        //    await ((CustomAuthenticationStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated(returnedUser);
+        //    NavigationManager.NavigateTo("/index");
+        //}
+        //else
+        //{
+        //    LoginMesssage = "Invalid username or password";
+        //}
+
+        return await Task.FromResult(true);
+    }
+
+}

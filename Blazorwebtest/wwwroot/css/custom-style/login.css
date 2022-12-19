@@ -1,0 +1,13 @@
+﻿body {
+}
+
+.whole-page{
+    position:relative;
+    background-color:skyblue;
+}
+
+.header {
+    position:relative;
+    background-color: black;
+    height: 10vh;
+}
